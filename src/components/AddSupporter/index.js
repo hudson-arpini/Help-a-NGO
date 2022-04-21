@@ -30,7 +30,7 @@ export function AddSupporter() {
     
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="inputName">Name</label>
+            {/* <label htmlFor="inputName">Name</label> */}
             <input
                 placeholder="Name"
                 id="inputName"
@@ -38,7 +38,7 @@ export function AddSupporter() {
                 name="Name"
                 onChange={handleChange}
             />
-            <label htmlFor="inputField">Field of Work</label>
+            {/* <label htmlFor="inputField">Field of Work</label> */}
             <input
                 placeholder="Field of Work"
                 id="inputField"
@@ -46,7 +46,7 @@ export function AddSupporter() {
                 name="Field"
                 onChange={handleChange}
             />
-            <label htmlFor="inputLocation">Location</label>
+            {/* <label htmlFor="inputLocation">Location</label> */}
             <input
                 placeholder="Location"
                 id="inputLocation"
@@ -54,7 +54,7 @@ export function AddSupporter() {
                 name="Location"
                 onChange={handleChange}
             />
-            <label htmlFor="inputContact">Contact Information</label>
+            {/* <label htmlFor="inputContact">Contact Information</label> */}
             <input
                 placeholder="Contact Information"
                 id="inputContact"
