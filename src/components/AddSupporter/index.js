@@ -1,14 +1,20 @@
 import { useState } from "react";
 import axios from "axios";
 
-
 export function AddSupporter() {
+
+    const[supopen, setSupOpen] = useState(false)
+
     const [form, setForm] = useState({
         Name: "",
         Field: "",
         Location: "",
         Contact: "",
     });
+
+    function SuphandleClick(){
+        setSupOpen(true)
+    }
 
     function handleChange(event) {
         setForm({ ...form, [event.target.name]: event.target.value });
@@ -25,12 +31,21 @@ export function AddSupporter() {
             Location: "",
             Contact: "",
         });
+
+        setSupOpen(false)
     }
     
     
     return (
-        <form onSubmit={handleSubmit}>
-            {/* <label htmlFor="inputName">Name</label> */}
+        <div>
+        <button className="supporter" onClick={SuphandleClick}>I'm a Supporter</button>
+
+        <dialog className="dialog" open={supopen}>
+            
+        <h1>Register as a Supporter</h1>
+        
+        <form onSubmit={handleSubmit} className='form'>
+            
             <input
                 placeholder="Name"
                 id="inputName"
@@ -38,7 +53,7 @@ export function AddSupporter() {
                 name="Name"
                 onChange={handleChange}
             />
-            {/* <label htmlFor="inputField">Field of Work</label> */}
+          
             <input
                 placeholder="Field of Work"
                 id="inputField"
@@ -46,7 +61,7 @@ export function AddSupporter() {
                 name="Field"
                 onChange={handleChange}
             />
-            {/* <label htmlFor="inputLocation">Location</label> */}
+          
             <input
                 placeholder="Location"
                 id="inputLocation"
@@ -54,7 +69,7 @@ export function AddSupporter() {
                 name="Location"
                 onChange={handleChange}
             />
-            {/* <label htmlFor="inputContact">Contact Information</label> */}
+            
             <input
                 placeholder="Contact Information"
                 id="inputContact"
@@ -62,8 +77,11 @@ export function AddSupporter() {
                 name="Contact"
                 onChange={handleChange}
             />
-            <button type="submit">Submit</button>        
+            <div className="actions">
+            <button type="submit" className="submit">Submit</button>        
+            </div>
         </form>
-
+        </dialog>
+        </div>
     );
 }

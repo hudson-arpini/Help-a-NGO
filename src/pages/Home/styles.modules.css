@@ -39,6 +39,7 @@ header{
 .form{
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 .form input{
@@ -80,15 +81,18 @@ header{
     display: flex;
     justify-content: center;
     color: white;
+    height: 390px;
 }
 
 hr{
     width: 1100px;    
 }
+
 .supporterboard{
     display: flex;
     justify-content: center;
     color: white;
+    height: 390px;
 }
 
 footer{
