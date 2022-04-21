@@ -75,6 +75,10 @@ export function Home() {
                     <SupporterBoard />
                 </div>
             </div>
+
+            <footer>
+                <span>By Gabriel Ahrens e Hudson Arpini</span>
+            </footer>
         </div>
     )
 }

@@ -90,3 +90,9 @@ hr{
     justify-content: center;
     color: white;
 }
+
+footer{
+    margin: 20px auto 20px auto;
+    color: white;
+    font-size: 30px;
+}
