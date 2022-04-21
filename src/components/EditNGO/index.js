@@ -1,8 +1,10 @@
-import { useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 
-export function AddSupporter() {
+export function EditSupporter() {
+    const params = useParams();
     const [form, setForm] = useState({
         Name: "",
         Field: "",
@@ -11,14 +13,30 @@ export function AddSupporter() {
         Contact: "",
     });
 
+    useEffect(() => {
+        async function fetchData() {
+            const response = await axios.get(
+                `https://ironrest.herokuapp.com/ngogeh/${params}`
+            );
+            setForm({ ...response.data })
+        }
+        fetchData();
+    }, [params]);
+
     function handleChange(event) {
         setForm({ ...form, [event.target.name]: event.target.value });
     }
-    
+
     function handleSubmit(event) {
         event.preventDefault();
+        const editObject = { ...form };
+        delete editObject;
 
-        axios.post("https://ironrest.herokuapp.com/ngogeh", form);
+        axios.put(
+            `https://ironrest.herokuapp.com/ngogeh/${params}`,
+            editObject
+        );
+
 
         setForm({
             Name: "",
@@ -26,10 +44,9 @@ export function AddSupporter() {
             Location: "",
             Items: "",
             Contact: "",
-        });
+        })
     }
-    
-    
+
     return (
         <form onSubmit={handleSubmit}>
             {/* <label htmlFor="inputName">Name</label> */}
@@ -72,8 +89,7 @@ export function AddSupporter() {
                 name="Contact"
                 onChange={handleChange}
             />
-            <button type="submit">Submit</button>        
+            <button type="submit">Editar</button>
         </form>
-
     );
 }
