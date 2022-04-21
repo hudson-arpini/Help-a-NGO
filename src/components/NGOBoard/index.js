@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect} from "react";
+import { DeleteNGO } from "../DeleteNGO";
 
 export function NGOBoard() {
     const [data, setData] = useState([]);
@@ -25,7 +26,10 @@ export function NGOBoard() {
                     <p>Field of Work: {currentNGO.Field}</p>
                     <p>Location: {currentNGO.Location}</p> 
                     <p>Items: {currentNGO.Items}</p> 
-                    <p>Contact: {currentNGO.Contact}</p>                                         
+                    <p>Contact: {currentNGO.Contact}</p>
+
+                    {/* <DeleteNGO id={currentNGO._id} /> */}
+                                         
                 </>
                 )
             })} 
