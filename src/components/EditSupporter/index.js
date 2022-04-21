@@ -29,7 +29,7 @@ export function EditSupporter() {
     function handleSubmit(event) {
         event.preventDefault();
         const editObject = { ...form };
-        delete editObject;
+        delete editObject._id;
 
         axios.put(
             `https://ironrest.herokuapp.com/supgeh/${params}`,

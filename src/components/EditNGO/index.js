@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 
-export function EditSupporter() {
+export function EditNGO() {
     const params = useParams();
     const [form, setForm] = useState({
         Name: "",
@@ -30,7 +30,7 @@ export function EditSupporter() {
     function handleSubmit(event) {
         event.preventDefault();
         const editObject = { ...form };
-        delete editObject;
+        delete editObject._id;
 
         axios.put(
             `https://ironrest.herokuapp.com/ngogeh/${params}`,

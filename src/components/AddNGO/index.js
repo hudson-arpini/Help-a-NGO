@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 
-export function AddSupporter() {
+export function AddNGO() {
     const [form, setForm] = useState({
         Name: "",
         Field: "",
