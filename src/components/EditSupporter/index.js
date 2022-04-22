@@ -4,8 +4,11 @@ import { useState } from "react";
 
 
 export function EditSupporter(props) {
+
     const[openeditsup, setopeneditsup]=useState(false)
+
     function opensupeditform(){setopeneditsup(true)}
+
     const [form, setForm] = useState({
         Name: "",
         Field: "",
@@ -13,15 +16,6 @@ export function EditSupporter(props) {
         Contact: "",
     });
 
-    useEffect(() => {
-        async function fetchData() {
-            const response = await axios.get(
-                `https://ironrest.herokuapp.com/supgeh/${props.id}`
-            );
-            setForm({ ...response.data })
-        }
-        fetchData();
-    }, [openeditsup]);
 
     function handleChange(event) {
         setForm({ ...form, [event.target.name]: event.target.value });
