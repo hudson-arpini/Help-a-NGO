@@ -33,6 +33,7 @@ export function AddSupporter() {
         });
 
         setSupOpen(false)
+        setTimeout(()=>{window.location.href='/'},500)
     }
     
     

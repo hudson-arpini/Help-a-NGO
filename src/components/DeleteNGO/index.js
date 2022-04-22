@@ -4,6 +4,7 @@ export function DeleteNGO(props) {
 
     function handleDeletengo(){
         axios.delete(`https://ironrest.herokuapp.com/ngogeh/${props.id}`)
+        setTimeout(()=>{window.location.href='/'},500)
     }
      
      

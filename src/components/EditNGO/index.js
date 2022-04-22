@@ -29,8 +29,8 @@ export function EditNGO(props) {
             
         );
  
-        
         setopeneditngo(false)
+        setTimeout(()=>{window.location.href='/'},500)
     }
 
     return (

@@ -31,8 +31,8 @@ export function EditSupporter(props) {
             {...form}
         );
 
-
         setopeneditsup(false)
+        setTimeout(()=>{window.location.href='/'},500)
     }
 
     return (

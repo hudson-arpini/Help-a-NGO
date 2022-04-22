@@ -34,8 +34,8 @@ export function AddNGO() {
             Items: "",
             Contact: "",
         });
-
         setNGOOpen(false)
+        setTimeout(()=>{window.location.href='/'},500)
     }
     
     
