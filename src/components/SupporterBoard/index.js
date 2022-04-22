@@ -27,7 +27,7 @@ export function SupporterBoard(){
                     <p>Link: <a href={currentSupporter.Contact} target='_blank' >{currentSupporter.Contact}</a></p>
                     <div className="ngobuttons">
                     <DeleteSupporter id={currentSupporter._id}/>
-                    <EditSupporter id={currentSupporter._id}/>
+                    <EditSupporter id={currentSupporter._id} data={currentSupporter}/>
                     </div>
                 </div>
                 )

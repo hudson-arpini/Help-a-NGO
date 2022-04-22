@@ -29,7 +29,7 @@ export function NGOBoard() {
                     <p>Link: <a href={currentNGO.Contact} target='_blank' >{currentNGO.Contact}</a></p>
                     <div className="ngobuttons">
                     <DeleteNGO id={currentNGO._id}/>
-                    <EditNGO id={currentNGO._id}/>
+                    <EditNGO id={currentNGO._id} data={currentNGO}/>
                     </div>                               
                 </div>
                 )

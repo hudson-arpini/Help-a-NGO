@@ -4,25 +4,17 @@ import { useState } from "react";
 
 
 export function EditNGO(props) {
+    
     const [form, setForm] = useState({
-        Name: "",
-        Field: "",
-        Location: "",
-        Items: "",
-        Contact: "",
+        Name: props.data.Name,
+        Field: props.data.Field,
+        Location: props.data.Location,
+        Items: props.data.Items,
+        Contact: props.data.Contact,
     });
     const[openeditngo, setopeneditngo]=useState(false)
     function openngoeditform() {setopeneditngo(true)}
     
-
-    /*useEffect(()=>{
-        async function fetchdata(){
-            const response = await axios.get( `https://ironrest.herokuapp.com/ngogeh/${props.id}`)
-            
-            setForm(response.data)
-         }
-         fetchdata()
-        })*/
 
     function handleChange(event) {
         setForm({ ...form, [event.target.name]:event.target.value });
@@ -30,25 +22,14 @@ export function EditNGO(props) {
 
     function handleSubmit(event) {
         event.preventDefault();
-
-
-        const editObject = {...form} ;
-        console.log(editObject)
-        console.log(props.id)
+ 
         axios.put(
             `https://ironrest.herokuapp.com/ngogeh/${props.id}`,
-            editObject
+            {...form}
+            
         );
-
-
-       /*setForm({
-            Name: "",
-            Field: "",
-            Location: "",
-            Items: "",
-            Contact: "",
-        })*/
-
+ 
+        
         setopeneditngo(false)
     }
 

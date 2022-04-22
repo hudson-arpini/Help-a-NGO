@@ -4,14 +4,17 @@ import { useState } from "react";
 
 
 export function EditSupporter(props) {
+
+    const [form, setForm] = useState({
+        Name: props.data.Name,
+        Field: props.data.Field,
+        Location: props.data.Location,
+        Items: props.data.Items,
+        Contact: props.data.Contact,
+    });
     const[openeditsup, setopeneditsup]=useState(false)
     function opensupeditform(){setopeneditsup(true)}
-    const [form, setForm] = useState({
-        Name: "",
-        Field: "",
-        Location: "",
-        Contact: "",
-    });
+    
 
 
     function handleChange(event) {
@@ -21,22 +24,14 @@ export function EditSupporter(props) {
     function handleSubmit(event) {
         event.preventDefault();
         
-
-
-        const editObject = { ...form };
+        
 
         axios.put(
             `https://ironrest.herokuapp.com/supgeh/${props.id}`,
-            editObject
+            {...form}
         );
 
 
-        /*setForm({
-            Name: "",
-            Field: "",
-            Location: "",
-            Contact: "",
-        })*/
         setopeneditsup(false)
     }
 
