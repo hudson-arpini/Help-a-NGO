@@ -31,6 +31,18 @@ header{
     border: 2px solid white;
 }
 
+.ngo:hover{
+    font-size: 40px;
+    width: 190px;
+    height: 90px;
+}
+
+.supporter:hover{
+    font-size: 40px;
+    width: 190px;
+    height: 90px;
+}
+
 .dialog{
     background-color: #181818;
     color: white;
