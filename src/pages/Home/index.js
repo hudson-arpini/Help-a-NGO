@@ -33,7 +33,7 @@ export function Home() {
             </div>
 
             <footer>
-                <span>By Gabriel Ahrens e Hudson Arpini</span>
+                <span>By <a href='https://github.com/Gab-Ahrens' target='_blank' >Gabriel Ahrens</a> e <a href='https://github.com/hudson-arpini' target='_blank' >Hudson Arpini</a></span>
             </footer>
         </div>
     )

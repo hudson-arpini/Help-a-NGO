@@ -4,11 +4,8 @@ import { useState } from "react";
 
 
 export function EditSupporter(props) {
-
     const[openeditsup, setopeneditsup]=useState(false)
-
     function opensupeditform(){setopeneditsup(true)}
-
     const [form, setForm] = useState({
         Name: "",
         Field: "",
@@ -23,6 +20,9 @@ export function EditSupporter(props) {
 
     function handleSubmit(event) {
         event.preventDefault();
+        
+
+
         const editObject = { ...form };
 
         axios.put(
@@ -31,12 +31,12 @@ export function EditSupporter(props) {
         );
 
 
-        setForm({
+        /*setForm({
             Name: "",
             Field: "",
             Location: "",
             Contact: "",
-        })
+        })*/
         setopeneditsup(false)
     }
 

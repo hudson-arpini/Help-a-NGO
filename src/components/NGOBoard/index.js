@@ -25,7 +25,7 @@ export function NGOBoard() {
                     <p>Name: {currentNGO.Name}</p>
                     <p>Field of Work: {currentNGO.Field}</p>
                     <p>Location: {currentNGO.Location}</p>
-                    <p>Items: {currentNGO.Items}</p>
+                    <p>Necessary Items: {currentNGO.Items}</p>
                     <p>Link: <a href={currentNGO.Contact} target='_blank' >{currentNGO.Contact}</a></p>
                     <div className="ngobuttons">
                     <DeleteNGO id={currentNGO._id}/>
