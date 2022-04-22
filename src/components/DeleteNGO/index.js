@@ -1,12 +1,11 @@
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
 
-export function DeleteNGO() {
-    const params = useParams();    useEffect(() => {
-        const response = axios.delete(`https://ironrest.herokuapp.com/ngogeh/${params._id}`)
-    })   
+export function DeleteNGO(props) {
+
+    function handleDeletengo(){axios.delete(`https://ironrest.herokuapp.com/ngogeh/${props.id}`)}
+     
      
     return (
-        <></>    );
+        <button onClick={handleDeletengo} className='editdelete'>Delete</button>
+           );
 }

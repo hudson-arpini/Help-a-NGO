@@ -1,10 +1,11 @@
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { useState } from "react";
 
 
-export function EditSupporter() {
-    const params = useParams();
+export function EditSupporter(props) {
+    const[openeditsup, setopeneditsup]=useState(false)
+    function opensupeditform(){setopeneditsup(true)}
     const [form, setForm] = useState({
         Name: "",
         Field: "",
@@ -15,12 +16,12 @@ export function EditSupporter() {
     useEffect(() => {
         async function fetchData() {
             const response = await axios.get(
-                `https://ironrest.herokuapp.com/supgeh/${params}`
+                `https://ironrest.herokuapp.com/supgeh/${props.id}`
             );
             setForm({ ...response.data })
         }
         fetchData();
-    }, [params]);
+    }, [openeditsup]);
 
     function handleChange(event) {
         setForm({ ...form, [event.target.name]: event.target.value });
@@ -29,10 +30,9 @@ export function EditSupporter() {
     function handleSubmit(event) {
         event.preventDefault();
         const editObject = { ...form };
-        delete editObject;
 
         axios.put(
-            `https://ironrest.herokuapp.com/supgeh/${params}`,
+            `https://ironrest.herokuapp.com/supgeh/${props.id}`,
             editObject
         );
 
@@ -43,10 +43,15 @@ export function EditSupporter() {
             Location: "",
             Contact: "",
         })
+        setopeneditsup(false)
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div className="editform">
+
+        <button onClick={opensupeditform} className='editdelete'>Edit</button>
+        <dialog open={openeditsup} className="dialogedit">
+        <form onSubmit={handleSubmit} className="form">
             <input
                 placeholder="Name"
                 id="inputName"
@@ -75,7 +80,9 @@ export function EditSupporter() {
                 name="Contact"
                 onChange={handleChange}
             />
-            <button type="submit">Editar</button>
+            <button type="submit" className="submit">Editar</button>
         </form>
+        </dialog>
+        </div>
     );
 }

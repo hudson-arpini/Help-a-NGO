@@ -34,6 +34,14 @@ header{
 .dialog{
     background-color: #181818;
     color: white;
+
+}
+
+.dialogedit{
+    background-color: #181818;
+    color: white;
+    position: absolute;
+    top: 350px;
 }
 
 .form{
@@ -79,13 +87,50 @@ header{
 
 .ngoboard{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     color: white;
     height: 390px;
 }
 
+.ngos{
+    margin-top: -15px;
+    display: flex;
+    justify-content: space-evenly;
+    width:700px ;
+}
+
+.ngoitem{
+    font-size: 26px;
+    padding: 0 25px 0 25px;
+}
+
+.ngoitem:hover{
+    border: 1px solid white
+}
+
+.ngobuttons{
+    display: flex;
+    gap: 10px;
+}
+
+.editdelete{
+    background-color: #010f01;
+    color: white;
+    font-family: Reenie Beanie;
+    font-size: 23px;
+    border: 0px;
+    width: 50px;
+    height: 20px;
+}
+
+.editdelete:hover{
+    font-size: 30px;
+}
+
 hr{
-    width: 1100px;    
+    width: 1100px;
+    margin: 30px auto 15px auto    
 }
 
 .supporterboard{
@@ -93,6 +138,7 @@ hr{
     justify-content: center;
     color: white;
     height: 390px;
+    margin-top: -15px;
 }
 
 footer{

@@ -21,13 +21,13 @@ export function Home() {
 
 
             <div className="board">
-                <div className="ngoboard">
+                <div>
                     <NGOBoard />
                 </div>
 
                 <hr/>
                 
-                <div className="supporterboard">
+                <div>
                     <SupporterBoard />
                 </div>
             </div>
