@@ -105,6 +105,15 @@ header{
     padding: 0 25px 0 25px;
 }
 
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    font-size: 30px;
+}
+
 .ngoitem:hover{
     border: 1px solid white
 }
